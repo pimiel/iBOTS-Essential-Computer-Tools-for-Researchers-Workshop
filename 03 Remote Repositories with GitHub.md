@@ -66,7 +66,7 @@ If a repository already exists on GitHub, you can clone it to your local machine
 
 1. Cloning an existing, public repository from Github
    1. Note the url of the [workshop github repo](https://github.com/ibehave-ibots/iBOTS-Essential-Computer-Tools-for-Researchers-Workshop) (Refer image above).
-   2. In the VS Code terminal, run `git clone <repo-url> or use VS Code GUI to clone the repository. 
+   2. In the VS Code terminal, run `git clone <repo-url>` or use VS Code GUI to clone the repository. 
    3. Open the cloned folder in VS Code and check that all the files are present on your local machine.
 
 2. Cloning your own repository from GitHub  
