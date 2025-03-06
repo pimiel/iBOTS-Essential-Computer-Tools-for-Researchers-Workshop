@@ -36,8 +36,6 @@ Once you have a local repository, you can push it to GitHub to store it online a
 
 **Exercises**  
 
-<img src="images/url.png" alt="a" width="300">
-
 1. **Adding a remote and pushing the initial commit**  
    1. Open a local git repository on VS Code.
    2. Create a new **public** repository on GitHub (without initializing it with README. It should be **completely** empty) and note down the URL (Refer above figure to find it). 
@@ -64,13 +62,19 @@ If a repository already exists on GitHub, you can clone it to your local machine
 ### Exercises  
 
 **Start these exercises on a new VS Code window**
+<img src="images/url.png" alt="a" width="300">
 
-1. Cloning your own repository from GitHub  
+1. Cloning an existing, public repository from Github
+   1. Note the url of the [workshop github repo](https://github.com/ibehave-ibots/iBOTS-Essential-Computer-Tools-for-Researchers-Workshop) (Refer image above).
+   2. In the VS Code terminal, run `git clone <repo-url> or use VS Code GUI to clone the repository. 
+   3. Open the cloned folder in VS Code and check that all the files are present on your local machine.
+
+2. Cloning your own repository from GitHub  
    1. Create a **new public repository on GitHub**, **this time initializing it with a README** and note the URL. 
    2. In the terminal, run `git clone <repo-url>` or use VS Code GUI to clone the repository. 
    3. Open the cloned folder in VS Code and check that the README file exists.  
 
-2. Pulling updates from GitHub  
+3. Pulling updates from GitHub  
    1. Make a change directly on GitHub (edit the README file and commit).  
    2. In the terminal, run `git pull origin main`.  
    3. Verify that the changes are now in your local copy.  
