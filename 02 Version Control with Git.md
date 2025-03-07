@@ -80,5 +80,5 @@ Git allows you to go back to a previous version of your work if needed. Instead 
 2. Reverting a specific commit  
    1. Modify and commit changes to `experiment.txt` a few times.  
    2. Use `git log --oneline` to identify a specific commit to undo.  
-   3. Use `git revert <commit-hash>` to undo only that commit.  
+   3. Use `git revert <commit-hash>` to undo only that commit. Were you able to do this smoothly? Or did you get any conflicts? If so, why? 
    4. Check the commit history again to verify the changes.  
