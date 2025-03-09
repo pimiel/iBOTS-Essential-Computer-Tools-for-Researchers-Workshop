@@ -2,12 +2,12 @@
 
 In this unit, we will learn how to use Conda to manage packages and environments. Conda allows you to create isolated environments, manage dependencies, and install packages seamlessly across platforms. This unit includes instructions for installing Conda via Miniforge and covers core Conda commands for creating, managing, and sharing environments. 
 
-## Installation: Visual Studio Code (VSCode)
+## Installation
 
+### Visual Studio Code (VSCode)
 [Download Link](https://code.visualstudio.com/download)
 
-
-## Installation: Miniforge
+### Miniforge
 
 Miniforge provides a streamlined approach to Conda installation with a minimal environment and access to the conda-forge community repository, which is popular for its extensive collection of data science and scientific computing packages. Miniforge is available for all major operating systems, making it a flexible choice for cross-platform development.
 
