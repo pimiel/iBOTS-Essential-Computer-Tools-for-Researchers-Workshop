@@ -4,26 +4,13 @@ In this unit, we will learn how to connect a local Git repository to GitHub, clo
 
 ---
 
-## Setup instructions 
+## GitHub Setup instructions 
 
 ### Create a GitHub Account  
 
 1. Go to [GitHub Sign Up](https://github.com/signup).  
 2. Fill in the required details.  
 3. Verify your email and complete the account setup.  
-
-### Configure Git Username & Email in VS Code
-
-Once you have Git installed and a GitHub account set up, configure your Git identity in **VS Code’s terminal**.  
-
-1. Open **VS Code**.  
-2. Open the terminal:  
-3. Run the following commands to set your **Git username** and **email**  
-
-   ```bash
-   git config --global user.name "Your GitHub Username"
-   git config --global user.email "your-email@example.com"
-   ```
 
 ## Section 1: Pushing a Local Repository to GitHub
 
