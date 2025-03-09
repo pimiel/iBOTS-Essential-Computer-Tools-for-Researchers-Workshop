@@ -11,7 +11,7 @@ Miniforge provides a streamlined approach to Conda installation with a minimal e
 
 ### Installation Instructions
 
- **Only if you don't have conda already installed,** please follow these instructions to install Miniforge. 
+ **If you do not already have Conda installed** please follow these instructions to install Miniforge. 
 
 #### macOS & Linux
 
@@ -29,7 +29,7 @@ Miniforge provides a streamlined approach to Conda installation with a minimal e
 2. Open the installer and follow the prompts.
 3. Once installed, open a new terminal or Command Prompt.
 
-After installation, verify Conda by running:
+After installation, verify that Conda is installed by running:
 ```bash
 conda --version
 ```
@@ -58,13 +58,13 @@ This section covers the basics of creating, inspecting, activating, and deactiva
 
  **Exercises**
 
-1. Creating environment by name
+1. Creating an environment by name
    1. Create a new empty Conda environment named `test_env`.
    2. List all environments to verify that `test_env` was created.
    3. Activate `test_env` and confirm activation.
    4. Deactivate the environment.
 
-2. Creating environment at a path
+2. Creating an environment at a specific path
    1. Create a new empty Conda environment in the directory `test_env2`.
    2. List all environments to verify that `test_env2` was created.
    3. In the File Explorer, verify that `test_env2` folder exists.
@@ -101,10 +101,9 @@ Other tools, such as pip, are primarily designed for Python packages, while Cond
    4. (Alternative) Type `python --version` to verify Python was installed. 
    5. Deactivate the environment
 
-2. Create another environment named `r_env` and install `r-base` in it.
-   1. List installed packages in `r_env` to verify the installation.
-   2. (Alternative) Type `r --version` to verify R was installed.
+2. Install `python=2.7` in `py_env2` environment and verify the installation.
 
+3. Install `r-base` in `r_env` environment.
 
 
 ---
@@ -131,7 +130,7 @@ This section shows how to save an environment configuration to a file and recrea
 **Exercises**
 
 1. Export the `test_env` environment to a file named `test_env.yml`.
-2. Deactivate and remove `test_env` using `conda remove -n test_env --all`.
+2. Deactivate and remove `test_env` using `conda remove -n test_env --all`. List all the environments to verify that it has been removed.
 3. Recreate `test_env` from the `test_env.yml` file.
 4. Verify the recreation by activating `test_env` and listing the installed packages.
 5. Remove all the environments you don't want to keep after this session.
