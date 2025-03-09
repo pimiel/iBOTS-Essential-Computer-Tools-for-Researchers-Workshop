@@ -4,9 +4,37 @@ In this unit, we will learn how to use Git to track changes, manage collaboratio
 
 ---
 
+## Installation: Git
+
+Before using Git, you need to install it on your system. Installation methods vary depending on your operating system. Here are the links for installation instructions on the official website.
+
+#### macOS
+
+[Installation instructions: macOS](https://git-scm.com/downloads/mac)
+
+#### Linux
+
+[Installation instructions: Linux](https://git-scm.com/downloads/linux)
+
+#### Windows
+
+[Installation instructions: Windows](https://git-scm.com/downloads/win)
+
+#### Configuring Identity for Git
+
+Before using Git on your system, the first step is to configure your Git username and email address. This ensures that Git associates your identity with every commit you make.
+
+In the terminal, 
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
 ## Section 1: Tracking Changes  
 
-Git helps track changes in your project by monitoring file modifications. You can check the status of your changes, add files to be included in the next commit, and unstage them if needed. This section covers the basic commands for tracking changes and how to use the VS Code interface for Git.  
+Git helps track changes in your project by monitoring file modifications. You can check the status of your changes, add files to be included in the temporary staging area, and unstage them if needed. This section covers the basic commands for tracking changes and how to use the VS Code interface for Git.  
+
+The temporary staging area holds changes before they are committed (saved permanently in the repository’s history). You can stage modified files, newly created files, and deleted files.
 
 | Command                | Description                                             | VS Code GUI |
 |------------------------|---------------------------------------------------------|-------------|
@@ -23,45 +51,54 @@ Git helps track changes in your project by monitoring file modifications. You ca
    2. Initialize a Git repository in this folder.  
    3. Check the status of the repository using `git status`.  
 
-2. Tracking files and changes
-   1. Create file called `experiment.txt` with some text, and check the status.  
-   2. Stage the file using `git add experiment.txt` and check the status.  
-   3. Edit `experiment.txt` and stage changes.
-
-3. Unstaging changes
-   1. Stage a new file called `experiment_new.txt`.  
-   2. Unstage the file using `git reset experiment_new.txt` and check the status.
+2. Tracking files and changes (check status before and after staging)
+   1. Create and stage `experiment_1.txt`. 
+   2. Create `experiment_2.txt` and `experiment_3.txt`. Stage both the files together.
+   3. Unstage the `experiment_3.txt` and check the status.
+   4. Delete `experiment_3.txt` and check the status.
 
 ---
 
-## Section 2: Committing Changes  
+## Section 2: Committing Changes and Viewing History 
 
-Once you have tracked your changes, you need to save them using a commit. A commit records a snapshot of your project at a particular time. This section covers committing changes, adding messages, and viewing commit history.  
+The staged changes are still only temporary. To create a more permanent snapshot of your project, you need to save the staged changes using a `commit`. A commit records a snapshot of your project at a particular time described by a `commit message`. Essentially, your project will be a series of commits and the changes committed can be accessed via commit history.  
 
-| Command                         | Description                                         | VS Code GUI |
-|---------------------------------|-----------------------------------------------------|-------------|
-| `git commit -m "Commit message"` | Commit staged files with a message                  | Type a commit message in **Source Control** and click **✓ (checkmark) button** |
-| `git commit -am "Commit message"` | Stage and commit all modified files in one step    | NA (Files must be staged manually in VS Code before committing) |
-| `git log`                        | View commit history                                | NA |
+In Git, each commit has a unique **commit hash**, which is a long ID that helps track changes. Commits are saved in order, creating a history of changes in the project. You can see past commits using `git log`, which shows the commit hash, message, and time of each commit. **Typical workflow would be that you *stage* any change you make to the files in the temporary staging area and once you are happy with the changes you have made, you *commit* them**. The point where you **stage** and **commit** are up to you. This section covers committing changes, adding messages, and viewing commit history.
+
+| Command | Description | VS Code GUI |
+|---------|-------------|-------------|
+| `git add f1.txt f2.txt` | Stage specific files for commit | Click **➕ (plus) icon** next to the files in **Source Control** |
+| `git commit -m "Commit message"` | Commit staged files with a message | Click **✔ (checkmark) icon**, enter commit message, and press Enter |
+| `git add .` | Stage modifications of all files | Click **➕ (plus) icon** next **Changes** |
+| `git commit -am "Commit message"` | Stage and commit all modified files in one step | Click **"Stage All Changes"**, then **✔ (checkmark) icon** |
+| `git log` | View the full commit history of the repository | **N/A** (Command-line only) |
+| `git log --oneline` | View a compact version of the commit history | **N/A** (Command-line only) |
+| `git log -2` | Display the last two commits | **N/A** (Command-line only) |
+| `git diff` | Compare the working directory with the last commit | Click on the file in **Source Control** and check the inline diff |
+| `git diff <commit-hash1> <commit-hash2>` | Compare two specific commits | **N/A** (Command-line only) |
 
 **Exercises**  
 
 1. Committing changes  
-   1. Modify the `experiment.txt` file and add new text.  
-   2. Check the status of the repository.  
-   3. Stage and commit the changes with the message `"Updated experiment.txt with new data"`.  
-   4. View the commit history using `git log`.  
+   1. Commit creation of `experiment_1.txt` and `experiment_2.txt` with message "create files".    
+   2. Add some text into `experiment_1.txt` and commit with message "add data to exp 1".
+   3. Add some text into `experiment_2.txt`, modify `experiment_1.txt` and commit the changes with a suitable commit message. 
+   4. Modify both the files. Stage and commit in one step.
 
-2. Using the `-am` option  
-   1. Modify the `experiment.txt` file again.  
-   2. Use `git commit -am "Another update to experiment.txt"` to stage and commit in one step.  
-   3. Check the commit history again.  
+2. View history  
+   1. View the full commit history of the repository.
+   2. Check a compact version of the commit history.
+   3. Display the history of the last three commits. Make a few more commits if necessary.
+
+3. Comparing differences between commits
+   1. Compare the differences between the most recent commit and the working directory.
+   2. Compare two specific commits.
 
 ---
 
 ## Section 3: Reverting to Older Versions  
 
-Git allows you to go back to a previous version of your work if needed. Instead of deleting changes manually, you can use Git to revert to an earlier commit. This is where having descriptive commit messages can be useful in identifying which version you want to go back to. In this section, we cover viewing commit history and reverting changes using Git.  
+Git allows you to go back to a previous version of your work if needed. There are several ways of doing this. In this section, you will use one such method where you undo the changes made in a particular commit without losing the commit history. This is where having descriptive commit messages can be useful in identifying which version you want to go back to. In this section, we cover reverting changes using Git using `revert`.  
 
 | Command                      | Description                                         | VS Code GUI |
 |------------------------------|-----------------------------------------------------|-------------|
@@ -72,12 +109,12 @@ Git allows you to go back to a previous version of your work if needed. Instead 
 **Exercises**  
 
 1. Reverting the latest commit  
-   1. Modify `experiment.txt` again and commit the changes.  
+   1. Modify `experiment_1.txt` again and commit the changes.  
    2. Use `git log --oneline` to view the commit history.  
    3. Revert the latest commit using `git revert HEAD`.  
    4. Check the status and commit history to confirm the revert.  
 
-2. Reverting a specific commit  
+2. (Optional) Reverting a specific commit  
    1. Modify and commit changes to `experiment.txt` a few times.  
    2. Use `git log --oneline` to identify a specific commit to undo.  
    3. Use `git revert <commit-hash>` to undo only that commit. Were you able to do this smoothly? Or did you get any conflicts? If so, why? 
