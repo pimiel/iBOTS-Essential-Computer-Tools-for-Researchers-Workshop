@@ -25,7 +25,7 @@ Once you have a local repository, you can push it to GitHub to store it online a
 
 1. Adding a remote and pushing the initial commit  
    1. Open a local git repository on VS Code.
-   2. Create a new **public** repository on GitHub (without initializing it with README. It should be **completely** empty) and note down the URL (Refer above figure to find it). 
+   2. Create a new **public** repository on GitHub (**without** initializing it with README. It should be **completely** empty) and note down the URL (Refer above figure to find it). 
    3. In your local repository, add the remote URL using `git remote add origin <repo-url>`
    4. Push the local repository to GitHub using `git push -u origin main`.  
    5. Verify that the repository is now visible on GitHub.  
