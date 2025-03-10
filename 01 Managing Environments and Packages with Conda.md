@@ -105,9 +105,10 @@ Other tools, such as pip, are primarily designed for Python packages, while Cond
    4. (Alternative) Type `python --version` to verify Python was installed. 
    5. Deactivate the environment
 
-2. Install `python=2.7` in `py_env2` environment and verify the installation.
+2. Install `r-base` in `r_env` environment and verify the installation.
 
-3. Install `r-base` in `r_env` environment.
+
+3. (**Optional**) Install `python=2.7` in `py_env2` environment and verify the installation.
 
 
 ---
